@@ -1,0 +1,511 @@
+# TASKS.yaml — Machine-readable task queue
+# Status: todo | in_progress | blocked | review | done | cancelled
+
+# Phase 0 — Scaffold
+- id: T-001
+  title: "Set up Next.js 16 + TypeScript + Tailwind v4"
+  phase: 0
+  status: done
+  owner: orchestrator
+  depends_on: []
+  route: /
+  spec_ref: "SPEC.md §2"
+  dod:
+    - package.json created
+    - tsconfig.json created
+    - next.config.js created
+    - globals.css with tokens created
+    - layout.tsx created
+  blocked_reason: null
+  commit: "initial"
+
+- id: T-002
+  title: "Create SPEC.md, TASKS.yaml, PROGRESS.md, DECISIONS.md, CONTENT-GAPS.md"
+  phase: 0
+  status: done
+  owner: orchestrator
+  depends_on: []
+  route: null
+  spec_ref: "SPEC.md §1.1"
+  dod:
+    - SPEC.md created
+    - TASKS.yaml created
+    - PROGRESS.md created
+    - DECISIONS.md created
+    - CONTENT-GAPS.md created
+  blocked_reason: null
+  commit: "initial"
+
+- id: T-003
+  title: "Create lib/routes.ts with all routes"
+  phase: 0
+  status: done
+  owner: orchestrator
+  depends_on: []
+  route: null
+  spec_ref: "SPEC.md §7"
+  dod:
+    - routes.ts created
+    - all routes from SPEC included
+    - types defined
+  blocked_reason: null
+  commit: "initial"
+
+- id: T-004
+  title: "Create lib/site.ts with verified facts"
+  phase: 0
+  status: done
+  owner: orchestrator
+  depends_on: []
+  route: null
+  spec_ref: "SPEC.md §4"
+  dod:
+    - site.ts created
+    - all constants defined
+    - types exported
+  blocked_reason: null
+  commit: "initial"
+
+# Phase 1 — Foundation
+- id: T-010
+  title: "Build design system components"
+  phase: 1
+  status: todo
+  owner: subagent
+  depends_on: [T-001]
+  route: null
+  spec_ref: "SPEC.md §5"
+  dod:
+    - Button component
+    - Card component
+    - Badge component
+    - Metric component
+  blocked_reason: null
+  commit: null
+
+- id: T-011
+  title: "Build Header/Nav component"
+  phase: 1
+  status: todo
+  owner: subagent
+  depends_on: [T-010]
+  route: null
+  spec_ref: "SPEC.md §5.4"
+  dod:
+    - Responsive header
+    - Mega menu for services
+    - Book a call CTA
+  blocked_reason: null
+  commit: null
+
+- id: T-012
+  title: "Build Footer component"
+  phase: 1
+  status: todo
+  owner: subagent
+  depends_on: [T-010]
+  route: null
+  spec_ref: "SPEC.md §5.4"
+  dod:
+    - Footer with links
+    - Social links
+    - NAP info
+  blocked_reason: null
+  commit: null
+
+- id: T-013
+  title: "Build SERP Simulator component"
+  phase: 1
+  status: todo
+  owner: subagent
+  depends_on: [T-010]
+  route: null
+  spec_ref: "SPEC.md §5.5"
+  dod:
+    - Tabbed panel
+    - Google SERP view
+    - AI Overview view
+    - ChatGPT view
+    - Auto-cycle with pause
+  blocked_reason: null
+  commit: null
+
+- id: T-014
+  title: "Build homepage (/)"
+  phase: 1
+  status: todo
+  owner: subagent
+  depends_on: [T-011, T-012, T-013]
+  route: /
+  spec_ref: "SPEC.md §8.1"
+  dod:
+    - Hero with SERP simulator
+    - Service cards
+    - Case study highlights
+    - Testimonials
+    - CTA
+    - Metadata exported
+    - JSON-LD present
+  blocked_reason: null
+  commit: null
+
+- id: T-015
+  title: "Build /about/ page"
+  phase: 1
+  status: todo
+  owner: subagent
+  depends_on: [T-011, T-012]
+  route: /about/
+  spec_ref: "SPEC.md §8.1"
+  dod:
+    - Bio section
+    - Skills/expertise
+    - Experience timeline
+    - Metadata exported
+    - JSON-LD present
+  blocked_reason: null
+  commit: null
+
+- id: T-016
+  title: "Build /contact/ page"
+  phase: 1
+  status: todo
+  owner: subagent
+  depends_on: [T-011, T-012]
+  route: /contact/
+  spec_ref: "SPEC.md §8.1"
+  dod:
+    - Contact form
+    - WhatsApp link
+    - Email link
+    - Metadata exported
+  blocked_reason: null
+  commit: null
+
+- id: T-017
+  title: "Build /request-a-quote/ page"
+  phase: 1
+  status: todo
+  owner: subagent
+  depends_on: [T-011, T-012]
+  route: /request-a-quote/
+  spec_ref: "SPEC.md §8.1"
+  dod:
+    - Quote form
+    - Metadata exported
+  blocked_reason: null
+  commit: null
+
+- id: T-018
+  title: "Set up redirects in next.config.js"
+  phase: 1
+  status: todo
+  owner: subagent
+  depends_on: [T-001]
+  route: null
+  spec_ref: "SPEC.md §10"
+  dod:
+    - All 301 redirects added
+    - Permanent: true
+  blocked_reason: null
+  commit: null
+
+# Phase 2 — Service pillars
+- id: T-020
+  title: "Build /services/ hub page"
+  phase: 2
+  status: todo
+  owner: subagent
+  depends_on: [T-014]
+  route: /services/
+  spec_ref: "SPEC.md §8.1"
+  dod:
+    - Service grid
+    - Metadata exported
+    - JSON-LD present
+  blocked_reason: null
+  commit: null
+
+- id: T-021
+  title: "Build /services/seo/ pillar"
+  phase: 2
+  status: todo
+  owner: subagent
+  depends_on: [T-020]
+  route: /services/seo/
+  spec_ref: "SPEC.md §8.1"
+  dod:
+    - Hero
+    - Answer block
+    - Scope
+    - Method
+    - Proof
+    - FAQ
+    - Metadata exported
+    - JSON-LD present
+  blocked_reason: null
+  commit: null
+
+- id: T-022
+  title: "Build /services/ai-seo/ pillar"
+  phase: 2
+  status: todo
+  owner: subagent
+  depends_on: [T-020]
+  route: /services/ai-seo/
+  spec_ref: "SPEC.md §8.1"
+  dod:
+    - Hero
+    - Answer block
+    - Scope
+    - Method
+    - Proof
+    - FAQ
+    - Metadata exported
+    - JSON-LD present
+  blocked_reason: null
+  commit: null
+
+- id: T-023
+  title: "Build /services/local-seo/ pillar"
+  phase: 2
+  status: todo
+  owner: subagent
+  depends_on: [T-020]
+  route: /services/local-seo/
+  spec_ref: "SPEC.md §8.1"
+  dod:
+    - Hero
+    - Answer block
+    - Scope
+    - Method
+    - Proof
+    - FAQ
+    - Metadata exported
+    - JSON-LD present
+  blocked_reason: null
+  commit: null
+
+- id: T-024
+  title: "Build /services/ecommerce-seo/ pillar"
+  phase: 2
+  status: todo
+  owner: subagent
+  depends_on: [T-020]
+  route: /services/ecommerce-seo/
+  spec_ref: "SPEC.md §8.1"
+  dod:
+    - Hero
+    - Answer block
+    - Scope
+    - Method
+    - Proof
+    - FAQ
+    - Metadata exported
+    - JSON-LD present
+  blocked_reason: null
+  commit: null
+
+- id: T-025
+  title: "Build /services/smm-panel-seo/ pillar"
+  phase: 2
+  status: todo
+  owner: subagent
+  depends_on: [T-020]
+  route: /services/smm-panel-seo/
+  spec_ref: "SPEC.md §8.1"
+  dod:
+    - Hero
+    - Answer block
+    - Scope
+    - Method
+    - Proof
+    - FAQ
+    - Metadata exported
+    - JSON-LD present
+  blocked_reason: null
+  commit: null
+
+- id: T-026
+  title: "Build /services/industrial-seo/ pillar"
+  phase: 2
+  status: todo
+  owner: subagent
+  depends_on: [T-020]
+  route: /services/industrial-seo/
+  spec_ref: "SPEC.md §8.1"
+  dod:
+    - Hero
+    - Answer block
+    - Scope
+    - Method
+    - Proof
+    - FAQ
+    - Metadata exported
+    - JSON-LD present
+  blocked_reason: null
+  commit: null
+
+- id: T-027
+  title: "Build /services/international-seo/ pillar"
+  phase: 2
+  status: todo
+  owner: subagent
+  depends_on: [T-020]
+  route: /services/international-seo/
+  spec_ref: "SPEC.md §8.1"
+  dod:
+    - Hero
+    - Answer block
+    - Scope
+    - Method
+    - Proof
+    - FAQ
+    - Metadata exported
+    - JSON-LD present
+  blocked_reason: null
+  commit: null
+
+- id: T-028
+  title: "Build /services/seo-consulting/ pillar"
+  phase: 2
+  status: todo
+  owner: subagent
+  depends_on: [T-020]
+  route: /services/seo-consulting/
+  spec_ref: "SPEC.md §8.1"
+  dod:
+    - Hero
+    - Answer block
+    - Scope
+    - Method
+    - Proof
+    - FAQ
+    - Metadata exported
+    - JSON-LD present
+  blocked_reason: null
+  commit: null
+
+- id: T-029
+  title: "Build /services/digital-marketing/ pillar"
+  phase: 2
+  status: todo
+  owner: subagent
+  depends_on: [T-020]
+  route: /services/digital-marketing/
+  spec_ref: "SPEC.md §8.1"
+  dod:
+    - Hero
+    - Answer block
+    - Scope
+    - Method
+    - Proof
+    - FAQ
+    - Metadata exported
+    - JSON-LD present
+  blocked_reason: null
+  commit: null
+
+- id: T-030
+  title: "Build /case-studies/ index"
+  phase: 2
+  status: todo
+  owner: subagent
+  depends_on: [T-014]
+  route: /case-studies/
+  spec_ref: "SPEC.md §8.1"
+  dod:
+    - Case study grid
+    - Metadata exported
+  blocked_reason: null
+  commit: null
+
+- id: T-031
+  title: "Build /blog/ index"
+  phase: 2
+  status: todo
+  owner: subagent
+  depends_on: [T-014]
+  route: /blog/
+  spec_ref: "SPEC.md §8.1"
+  dod:
+    - Blog post grid
+    - Metadata exported
+  blocked_reason: null
+  commit: null
+
+# Phase 3 — Depth
+- id: T-040
+  title: "Build all sub-service pages"
+  phase: 3
+  status: todo
+  owner: subagent
+  depends_on: [T-021, T-022, T-023, T-024, T-025, T-026, T-027, T-028, T-029]
+  route: various
+  spec_ref: "SPEC.md §7.2"
+  dod:
+    - All sub-service pages built
+    - Metadata exported
+    - JSON-LD present
+  blocked_reason: null
+  commit: null
+
+- id: T-041
+  title: "Build all case study pages"
+  phase: 3
+  status: todo
+  owner: subagent
+  depends_on: [T-030]
+  route: /case-studies/[slug]/
+  spec_ref: "SPEC.md §7.1"
+  dod:
+    - All 16 case study pages
+    - Metadata exported
+    - JSON-LD present
+  blocked_reason: null
+  commit: null
+
+# Phase 4 — Geography
+- id: T-050
+  title: "Build /locations/ hub"
+  phase: 4
+  status: todo
+  owner: subagent
+  depends_on: [T-014]
+  route: /locations/
+  spec_ref: "SPEC.md §8.2"
+  dod:
+    - Location hub page
+    - Metadata exported
+  blocked_reason: null
+  commit: null
+
+- id: T-051
+  title: "Build all country hub pages"
+  phase: 4
+  status: todo
+  owner: subagent
+  depends_on: [T-050]
+  route: /locations/[country]/
+  spec_ref: "SPEC.md §8.2"
+  dod:
+    - All 6 country hubs
+    - Metadata exported
+    - JSON-LD present
+  blocked_reason: null
+  commit: null
+
+- id: T-052
+  title: "Build gated service×country pages"
+  phase: 4
+  status: todo
+  owner: subagent
+  depends_on: [T-051]
+  route: /services/[service]/[country]/
+  spec_ref: "SPEC.md §8.3"
+  dod:
+    - All gated pages built
+    - Metadata exported
+    - JSON-LD present
+  blocked_reason: null
+  commit: null
