@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Archivo_Expanded, Public_Sans, JetBrains_Mono, Anek_Bangla } from 'next/font/google';
 import './globals.css';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const archivoExpanded = Archivo_Expanded({
   subsets: ['latin'],
@@ -31,7 +33,10 @@ const anekBangla = Anek_Bangla({
 });
 
 export const metadata: Metadata = {
-  title: 'Kanok Miah | Digital Growth & AI SEO Consultant',
+  title: {
+    template: '%s | Kanok Miah',
+    default: 'Kanok Miah | Digital Growth & AI SEO Consultant',
+  },
   description: 'Kanok Miah — a results-driven digital marketing expert in Dhaka, Bangladesh. Specializing in SEO, Facebook Ads, Google Ads, Social Media Marketing, Content Marketing, and Web Development.',
   keywords: [
     'digital marketing expert bangladesh',
@@ -67,13 +72,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${archivoExpanded.variable} ${publicSans.variable} ${jetbrainsMono.variable} ${anekBangla.variable}`}>
+      <body className={`${archivoExpanded.variable} ${publicSans.variable} ${jetbrainsMono.variable} ${anekBangla.variable} font-body`}>
         <a href="#main-content" className="skip-to-content">
           Skip to content
         </a>
+        <Header />
         <main id="main-content">
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );
