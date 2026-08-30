@@ -29,7 +29,8 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <h3 className="font-display text-lg">{SITE.name}</h3>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/footer-logo.png" alt="Kanok Miah" className="h-8 w-auto" />
             <p className="mt-2 text-sm text-white/70">{SITE.tagline}</p>
             <div className="mt-4 space-y-1 text-sm text-white/70">
               <p>{NAP.address}</p>
