@@ -1,46 +1,20 @@
 import type { Metadata } from 'next';
-import { SITE, SOCIAL, CASE_STUDIES } from '@/lib/site';
+import Link from 'next/link';
 import Badge from '@/components/ui/Badge';
+import Metric from '@/components/ui/Metric';
+import { SITE, NAP, SOCIAL } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'About Kanok Miah | SEO & AI Search Consultant',
-  description: 'Learn about Kanok Miah — a digital growth and AI SEO consultant with 6+ years of experience and 210+ SEO campaigns.',
+  title: 'About',
+  description: 'Kanok Miah — SEO consultant since 2019. 6+ years experience, 210+ SEO projects, 350+ digital marketing campaigns.',
 };
 
 const experience = [
-  {
-    role: 'SEO Project Manager',
-    company: 'Khan IT',
-    period: 'Current',
-  },
-  {
-    role: 'Head of Digital Marketing',
-    company: 'CloudMatrix Tech',
-    period: 'Current',
-  },
-  {
-    role: 'Ex-Marketing Manager',
-    company: 'Solus Corporation',
-    period: 'Past',
-  },
-  {
-    role: 'Ex-Digital Marketing Executive',
-    company: 'Walton Plaza',
-    period: 'Past',
-  },
-];
-
-const skills = [
-  'Search Engine Optimization',
-  'Answer Engine Optimization',
-  'Generative Engine Optimization',
-  'Technical SEO',
-  'Local SEO',
-  'E-commerce SEO',
-  'Semantic SEO',
-  'Search Engine Marketing',
-  'Social Media Marketing',
-  'Conversion Rate Optimization',
+  { role: 'SEO Project Manager', company: 'Khan IT', period: 'Current' },
+  { role: 'Head of Digital Marketing', company: 'CloudMatrix Tech', period: 'Current' },
+  { role: 'SEO Project Manager', company: 'SMMGen, Growfollows, MoreThanPanel', period: 'Past' },
+  { role: 'Marketing Manager', company: 'Solus Corporation', period: 'Past' },
+  { role: 'Digital Marketing Executive', company: 'Walton Plaza', period: 'Past' },
 ];
 
 const certifications = [
@@ -58,46 +32,59 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="bg-[var(--color-paper)]">
         <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-          <Badge>SCOPE</Badge>
-          <h1 className="mt-4 font-display text-4xl text-[var(--color-forest)]">
-            Kanok Miah — SEO consultant since 2019
-          </h1>
-          <p className="mt-6 max-w-3xl text-lg text-[var(--color-graphite)]">
-            A results-driven digital marketing expert based in Dhaka, Bangladesh. I help businesses rank higher on Google and get cited by AI search engines like ChatGPT and Perplexity.
-          </p>
+          <div className="max-w-3xl">
+            <Badge>ABOUT</Badge>
+            <h1 className="mt-4 font-display text-4xl text-[var(--color-forest)]">
+              Kanok Miah — SEO consultant since 2019
+            </h1>
+            <p className="mt-4 text-lg text-[var(--color-graphite)]">
+              I am a digital marketing consultant based in Dhaka, Bangladesh. I have been working in SEO and digital marketing since 2019, completing 210+ SEO projects and 350+ digital marketing campaigns for businesses across Bangladesh, UK, USA, UAE, and Canada.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Bio */}
+      {/* Quick Answer — AEO */}
       <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
+          <div className="rounded-[var(--radius-card)] border border-[var(--color-signal)]/20 bg-[var(--color-signal)]/5 p-6">
+            <h2 className="font-display text-xl text-[var(--color-forest)]">Quick answer</h2>
+            <p className="mt-2 text-[var(--color-graphite)]">
+              Kanok Miah is a Bangladeshi SEO consultant and digital marketing expert with 6+ years of experience. He is the SEO Project Manager at Khan IT and Head of Digital Marketing at CloudMatrix Tech. He specializes in SEO, AI SEO (AEO + GEO), Local SEO, Facebook Ads, and Google Ads.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Journey — EEAT: Experience */}
+      <section className="bg-[var(--color-paper)]">
         <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="font-display text-2xl text-[var(--color-forest)]">The journey</h2>
-              <div className="mt-6 space-y-4 text-[var(--color-graphite)]">
-                <p>
-                  Started in 2019 with a simple observation: most businesses are invisible to the people searching for them. Not because they don&apos;t have good products or services, but because they don&apos;t know how to show up where it matters.
-                </p>
-                <p>
-                  Since then, I&apos;ve worked on 210+ SEO campaigns and 350+ digital marketing projects across multiple industries — from local businesses in Dundee to SaaS companies serving global markets.
-                </p>
-                <p>
-                  The approach is simple: measure what matters, fix what&apos;s broken, and build what compounds. No vanity metrics. No&ldquo; in today&apos;s digital landscape&rdquo; nonsense. Just work that moves numbers.
-                </p>
+              <Badge>EXPERIENCE</Badge>
+              <h2 className="mt-4 font-display text-2xl text-[var(--color-forest)]">My journey</h2>
+              <p className="mt-4 text-[var(--color-graphite)]">
+                I started in digital marketing in 2019, working with local businesses in Dhaka. Over the past six years, I have built SEO strategies for SaaS companies, e-commerce stores, manufacturers, and service businesses across five countries.
+              </p>
+              <p className="mt-4 text-[var(--color-graphite)]">
+                Today, I manage 8-12 live SEO projects and 2-5 paid ad campaigns monthly. I work directly with clients — no account managers, no middlemen. When you work with me, you get my experience applied to your business.
+              </p>
+              <div className="mt-8 grid grid-cols-2 gap-4">
+                <Metric value="210+" label="SEO Projects" />
+                <Metric value="350+" label="Total Projects" />
+                <Metric value="98%" label="Client Retention" />
+                <Metric value="5" label="Countries Served" />
               </div>
             </div>
             <div>
-              <h2 className="font-display text-2xl text-[var(--color-forest)]">Expertise</h2>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <Badge key={skill} variant="signal">{skill}</Badge>
-                ))}
-              </div>
-              
-              <h2 className="mt-8 font-display text-2xl text-[var(--color-forest)]">Certifications</h2>
+              <Badge>CREDENTIALS</Badge>
+              <h2 className="mt-4 font-display text-2xl text-[var(--color-forest)]">Education & certifications</h2>
+              <p className="mt-2 text-sm text-[var(--color-graphite)]">BBA in Marketing</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {certifications.map((cert) => (
-                  <Badge key={cert}>{cert}</Badge>
+                  <span key={cert} className="rounded-[var(--radius-pill)] bg-[var(--color-signal)]/10 px-3 py-1 text-xs font-medium text-[var(--color-signal-dk)]">
+                    {cert}
+                  </span>
                 ))}
               </div>
             </div>
@@ -105,17 +92,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Experience */}
-      <section className="bg-[var(--color-paper)]">
+      {/* Roles — EEAT: Authority */}
+      <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-          <h2 className="font-display text-2xl text-[var(--color-forest)]">Experience</h2>
+          <Badge>AUTHORITY</Badge>
+          <h2 className="mt-4 font-display text-2xl text-[var(--color-forest)]">Where I have worked</h2>
           <div className="mt-8 space-y-4">
-            {experience.map((exp, index) => (
-              <div key={index} className="flex items-start gap-4 rounded-[var(--radius-card)] bg-white p-4">
-                <div className="font-data text-sm text-[var(--color-graphite)]">{exp.period}</div>
+            {experience.map((exp, i) => (
+              <div key={i} className="flex items-start gap-4 rounded-[var(--radius-card)] border border-[var(--color-forest)]/12 bg-[var(--color-surface)] p-4">
+                <span className="font-data text-sm text-[var(--color-signal-dk)]">{exp.period}</span>
                 <div>
-                  <div className="font-medium text-[var(--color-forest)]">{exp.role}</div>
-                  <div className="text-sm text-[var(--color-graphite)]">{exp.company}</div>
+                  <h3 className="font-display text-lg text-[var(--color-forest)]">{exp.role}</h3>
+                  <p className="text-sm text-[var(--color-graphite)]">{exp.company}</p>
                 </div>
               </div>
             ))}
@@ -123,26 +111,40 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Education */}
-      <section className="bg-white">
+      {/* Philosophy — EEAT: Trust */}
+      <section className="bg-[var(--color-forest)] text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-          <h2 className="font-display text-2xl text-[var(--color-forest)]">Education</h2>
-          <div className="mt-4 text-[var(--color-graphite)]">
-            <p>BBA in Marketing</p>
+          <div className="max-w-3xl">
+            <Badge variant="forest">TRUST</Badge>
+            <h2 className="mt-4 font-display text-2xl">My approach</h2>
+            <div className="mt-6 space-y-4 text-white/80">
+              <p>
+                I do not chase traffic for its own sake. Every decision I make ties to one question: will this move the business forward?
+              </p>
+              <p>
+                I often fix failed SEO campaigns before building new ones. The first step is always understanding what went wrong — then building a strategy that addresses the actual problem.
+              </p>
+              <p>
+                You do not work with random account managers. You work with a system that reflects my experience and standards.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Social */}
-      <section className="bg-[var(--color-forest)] text-white">
+      {/* Contact */}
+      <section className="bg-[var(--color-paper)]">
         <div className="mx-auto max-w-7xl px-4 py-16 text-center lg:px-8">
-          <h2 className="font-display text-2xl">Connect</h2>
-          <div className="mt-6 flex justify-center gap-6">
-            <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white">LinkedIn</a>
-            <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white">Facebook</a>
-            <a href={SOCIAL.youtube} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white">YouTube</a>
-            <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white">Instagram</a>
-          </div>
+          <h2 className="font-display text-3xl text-[var(--color-forest)]">Let&apos;s talk</h2>
+          <p className="mt-4 text-lg text-[var(--color-graphite)]">
+            Book a free 30-minute strategy call. I will audit your current situation and give you 3 actionable steps.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-8 inline-block rounded-[var(--radius-card)] bg-[var(--color-signal)] px-8 py-4 text-sm font-medium text-white hover:bg-[var(--color-signal-dk)] transition-colors"
+          >
+            Book a free call
+          </Link>
         </div>
       </section>
     </>
