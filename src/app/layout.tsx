@@ -1,15 +1,8 @@
 import type { Metadata } from 'next';
-import { Archivo_Expanded, Public_Sans, JetBrains_Mono, Anek_Bangla } from 'next/font/google';
+import { Public_Sans, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-
-const archivoExpanded = Archivo_Expanded({
-  subsets: ['latin'],
-  variable: '--font-display',
-  display: 'swap',
-  weight: '700',
-});
 
 const publicSans = Public_Sans({
   subsets: ['latin'],
@@ -23,13 +16,6 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-data',
   display: 'swap',
   weight: '500',
-});
-
-const anekBangla = Anek_Bangla({
-  subsets: ['bengali'],
-  variable: '--font-bengali',
-  display: 'swap',
-  weight: ['400', '500', '600'],
 });
 
 export const metadata: Metadata = {
@@ -72,7 +58,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${archivoExpanded.variable} ${publicSans.variable} ${jetbrainsMono.variable} ${anekBangla.variable} font-body`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@700;800;900&family=Anek+Bangla:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={`${publicSans.variable} ${jetbrainsMono.variable} font-body`}>
         <a href="#main-content" className="skip-to-content">
           Skip to content
         </a>

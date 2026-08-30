@@ -1,84 +1,61 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  /* Color tokens — derived from #39B549 */
+:root {
   --color-signal: #39B549;
-  --color-signal-dk: #2A8A37;
+  --color-signal-dk: #2ea03d;
   --color-forest: #0F2A17;
   --color-paper: #F4F6F3;
   --color-surface: #FFFFFF;
-  --color-graphite: #5B6660;
+  --color-graphite: #4A5568;
 
-  /* Type scale */
+  --radius-card: 12px;
+  --radius-pill: 9999px;
+
   --font-display: 'Archivo Expanded', sans-serif;
   --font-body: 'Public Sans', sans-serif;
   --font-data: 'JetBrains Mono', monospace;
   --font-bengali: 'Anek Bangla', sans-serif;
-
-  /* Spacing */
-  --spacing-1: 4px;
-  --spacing-2: 8px;
-  --spacing-3: 12px;
-  --spacing-4: 16px;
-  --spacing-6: 24px;
-  --spacing-8: 32px;
-  --spacing-12: 48px;
-  --spacing-16: 64px;
-  --spacing-24: 96px;
-  --spacing-32: 128px;
-
-  /* Border radius */
-  --radius-data: 2px;
-  --radius-card: 8px;
-  --radius-pill: 999px;
 }
 
-/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--font-body);
-  background-color: var(--color-paper);
   color: var(--color-forest);
-  line-height: 1.65;
+  background: var(--color-paper);
+  margin: 0;
 }
 
-/* Data font utility */
-.font-data {
-  font-family: var(--font-data);
-  font-variant-numeric: tabular-nums;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
 }
 
-/* Display font utility */
 .font-display {
   font-family: var(--font-display);
-  font-weight: 700;
 }
 
-/* Focus ring */
-:focus-visible {
-  outline: 2px solid var(--color-signal-dk);
-  outline-offset: 2px;
+.font-data {
+  font-family: var(--font-data);
 }
 
-/* Skip to content */
+.font-body {
+  font-family: var(--font-body);
+}
+
 .skip-to-content {
   position: absolute;
-  left: -4000px;
+  left: -9999px;
   top: 0;
   z-index: 999;
-  padding: 8px 16px;
   background: var(--color-signal);
   color: white;
+  padding: 8px 16px;
 }
 
 .skip-to-content:focus {
   left: 0;
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
 }
