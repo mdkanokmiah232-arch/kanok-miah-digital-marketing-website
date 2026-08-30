@@ -17,9 +17,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-[var(--color-forest)]/12 bg-[var(--color-surface)]">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <span className="font-display text-xl text-[var(--color-forest)]">Kanok Miah</span>
-          <span className="hidden text-sm text-[var(--color-graphite)] sm:block">Digital Growth & AI SEO</span>
+        <Link href="/" className="flex items-center">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="Kanok Miah" className="h-8 w-auto" />
         </Link>
         
         {/* Desktop nav */}
