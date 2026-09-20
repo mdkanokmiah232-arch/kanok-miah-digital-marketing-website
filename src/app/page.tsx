@@ -93,7 +93,7 @@ export default function HomePage() {
           backgroundSize: '50px 50px'
         }}></div>
         
-        <div className="relative mx-auto max-w-7xl px-4 py-20 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 py-12 lg:py-20 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-signal)]/30 bg-[var(--color-signal)]/10 px-4 py-2 text-sm text-[var(--color-signal)] backdrop-blur-sm">
@@ -104,15 +104,15 @@ export default function HomePage() {
                 Available for new projects
               </div>
               
-              <h1 className="mt-8 font-display text-5xl font-bold leading-tight text-white sm:text-6xl lg:text-7xl">
+              <h1 className="mt-6 font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
                 <span className="block">Best Digital Marketing</span>
-                <span className="block mt-2 bg-gradient-to-r from-[var(--color-signal)] to-[#f59e0b] bg-clip-text text-transparent">
+                <span className="block mt-1 bg-gradient-to-r from-[var(--color-signal)] to-[#f59e0b] bg-clip-text text-transparent">
                   Expert in Bangladesh
                 </span>
               </h1>
               
-              <p className="mt-8 text-xl text-white/80 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Looking for the <strong className="text-white">best digital marketing expert in Bangladesh</strong> to accelerate your business growth? I'm Kanok Miah — a trusted SEO consultant with <strong className="text-white">6+ years experience</strong>, delivering <strong className="text-white">210+ SEO projects</strong> and <strong className="text-white">350+ campaigns</strong>.
+              <p className="mt-4 text-base text-white/80 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                Looking for the <strong className="text-white">best digital marketing expert</strong> in Bangladesh? I'm Kanok Miah with <strong className="text-white">6+ years experience</strong>, <strong className="text-white">210+ SEO</strong> & <strong className="text-white">350+ campaigns</strong>.
               </p>
               
               <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
@@ -134,23 +134,23 @@ export default function HomePage() {
               </div>
               
               {/* Quick Stats */}
-              <div className="mt-12 grid grid-cols-2 gap-4">
+              <div className="mt-8 grid grid-cols-4 gap-2">
                 {[
-                  { value: '6+', label: 'Years Experience', color: 'text-white' },
-                  { value: '210+', label: 'SEO Projects', color: 'text-[var(--color-signal)]' },
-                  { value: '350+', label: 'Total Projects', color: 'text-white' },
-                  { value: '105', label: 'Google Reviews', color: 'text-[var(--color-signal)]' },
+                  { value: '6+', label: 'Years', color: 'text-white' },
+                  { value: '210+', label: 'SEO', color: 'text-[var(--color-signal)]' },
+                  { value: '350+', label: 'Projects', color: 'text-white' },
+                  { value: '105', label: 'Reviews', color: 'text-[var(--color-signal)]' },
                 ].map((stat) => (
-                  <div key={stat.label} className="rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 p-4 text-center">
-                    <div className={`text-3xl font-bold ${stat.color}`}>{stat.value}</div>
-                    <div className="text-sm text-white/60 mt-1">{stat.label}</div>
+                  <div key={stat.label} className="rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 p-2 sm:p-3 text-center">
+                    <div className={`text-lg sm:text-2xl font-bold ${stat.color}`}>{stat.value}</div>
+                    <div className="text-[10px] sm:text-xs text-white/60 mt-0.5">{stat.label}</div>
                   </div>
                 ))}
               </div>
             </div>
             
-            {/* SERP Simulator */}
-            <div className="relative">
+            {/* SERP Simulator - Hidden on mobile */}
+            <div className="relative hidden lg:block">
               <div className="absolute -inset-4 bg-gradient-to-r from-[var(--color-signal)]/20 to-transparent blur-2xl"></div>
               <div className="relative rounded-2xl bg-white p-4 shadow-2xl">
                 <SerpSimulator />
