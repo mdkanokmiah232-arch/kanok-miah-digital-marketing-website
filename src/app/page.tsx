@@ -104,9 +104,9 @@ export default function HomePage() {
                 Available for new projects
               </div>
               
-              <h1 className="mt-6 font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+              <h1 className="mt-6 font-display text-3xl font-bold leading-[1.15] text-white sm:text-4xl lg:text-5xl xl:text-6xl max-w-full">
                 <span className="block">Best Digital Marketing</span>
-                <span className="block mt-1 bg-gradient-to-r from-[var(--color-signal)] to-[#f59e0b] bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-[var(--color-signal)] to-[#f59e0b] bg-clip-text text-transparent">
                   Expert in Bangladesh
                 </span>
               </h1>
