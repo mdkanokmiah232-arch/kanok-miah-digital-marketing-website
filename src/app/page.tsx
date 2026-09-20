@@ -79,16 +79,24 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[var(--color-forest)] via-[var(--color-forest)] to-[#1a4d3a]">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-white blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-[var(--color-signal)] blur-3xl"></div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-[var(--color-forest)] via-[#0d2818] to-[#0a1f14]">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-[var(--color-signal)]/20 blur-[100px] animate-pulse"></div>
+          <div className="absolute -bottom-40 -left-40 h-[400px] w-[400px] rounded-full bg-[var(--color-signal)]/10 blur-[80px] animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-[60px]"></div>
         </div>
+        
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
+        }}></div>
         
         <div className="relative mx-auto max-w-7xl px-4 py-20 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-white/90 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-signal)]/30 bg-[var(--color-signal)]/10 px-4 py-2 text-sm text-[var(--color-signal)] backdrop-blur-sm">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--color-signal)] opacity-75"></span>
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--color-signal)]"></span>
@@ -96,13 +104,15 @@ export default function HomePage() {
                 Available for new projects
               </div>
               
-              <h1 className="mt-6 font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
-                Best Digital Marketing<br/>
-                <span className="text-[var(--color-signal)]">Expert in Bangladesh</span>
+              <h1 className="mt-8 font-display text-5xl font-bold leading-tight text-white sm:text-6xl lg:text-7xl">
+                <span className="block">Best Digital Marketing</span>
+                <span className="block mt-2 bg-gradient-to-r from-[var(--color-signal)] to-[#f59e0b] bg-clip-text text-transparent">
+                  Expert in Bangladesh
+                </span>
               </h1>
               
-              <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Looking for the best digital marketing expert in Bangladesh to accelerate your business growth? I'm Kanok Miah, a trusted SEO consultant and digital marketing strategist with <strong>6+ years of hands-on experience</strong>, delivering <strong>210+ successful SEO projects</strong> and <strong>350+ digital marketing campaigns</strong>.
+              <p className="mt-8 text-xl text-white/80 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                Looking for the <strong className="text-white">best digital marketing expert in Bangladesh</strong> to accelerate your business growth? I'm Kanok Miah — a trusted SEO consultant with <strong className="text-white">6+ years experience</strong>, delivering <strong className="text-white">210+ SEO projects</strong> and <strong className="text-white">350+ campaigns</strong>.
               </p>
               
               <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
@@ -124,23 +134,18 @@ export default function HomePage() {
               </div>
               
               {/* Quick Stats */}
-              <div className="mt-10 flex flex-wrap justify-center gap-6 lg:justify-start">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white">6+</div>
-                  <div className="text-sm text-white/60">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[var(--color-signal)]">210+</div>
-                  <div className="text-sm text-white/60">SEO Projects</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white">350+</div>
-                  <div className="text-sm text-white/60">Total Projects</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-white">105</div>
-                  <div className="text-sm text-white/60">Google Reviews</div>
-                </div>
+              <div className="mt-12 grid grid-cols-2 gap-4">
+                {[
+                  { value: '6+', label: 'Years Experience', color: 'text-white' },
+                  { value: '210+', label: 'SEO Projects', color: 'text-[var(--color-signal)]' },
+                  { value: '350+', label: 'Total Projects', color: 'text-white' },
+                  { value: '105', label: 'Google Reviews', color: 'text-[var(--color-signal)]' },
+                ].map((stat) => (
+                  <div key={stat.label} className="rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 p-4 text-center">
+                    <div className={`text-3xl font-bold ${stat.color}`}>{stat.value}</div>
+                    <div className="text-sm text-white/60 mt-1">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
             
