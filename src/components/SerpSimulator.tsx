@@ -110,7 +110,7 @@ export default function SerpSimulator() {
       </div>
       
       {/* Content */}
-      <div className="rounded-b-lg border border-t-0 border-gray-200 bg-white p-4">
+      <div className="rounded-b-lg border border-t-0 border-gray-200 bg-white p-4 overflow-y-auto max-h-80 md:max-h-none">
         {tabs[activeTab].content}
       </div>
       
