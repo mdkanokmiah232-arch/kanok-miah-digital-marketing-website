@@ -16,17 +16,63 @@ const services = [
   { title: 'SMM Panel SEO', description: 'Rank your SMM panel globally.', href: '/services/smm-panel-seo', icon: '⚡' },
 ];
 
-const featuredCaseStudies = CASE_STUDIES.filter((cs) =>
-  ['locksmith-dundee', 'smmsun', 'stealth-windshield'].includes(cs.slug)
-);
+const processSteps = [
+  { step: '01', title: 'Project Research', description: 'We start with a complete understanding of your business and industry. Identify your objectives, challenges, and audience. Research competitors and investigate industry trends.', icon: '🔎' },
+  { step: '02', title: 'Custom Strategy Building', description: 'No copy-paste solutions. Every business is different; therefore, so will be the strategy. We generate tailored strategies for SEO, content, paid ads, and branding.', icon: '🗺️' },
+  { step: '03', title: 'Execution with SEO & Ads', description: 'I leverage both SEO and PPC advertising for max impact. Launching campaigns on Google, Facebook, YouTube, Instagram, and TikTok.', icon: '⚙️' },
+  { step: '04', title: 'Performance Monitoring', description: 'Results are tracked and optimized continuously. Use Google Analytics, Search Console, and advanced tools. Fix technical issues and improve campaign performance.', icon: '📈' },
+  { step: '05', title: 'Strategy Review', description: 'Markets change, and so do strategies. Review campaign performance every 2 months. Adjust plans to align with new trends and algorithms.', icon: '🔄' },
+  { step: '06', title: 'Long-Term Growth & ROI', description: 'Building long-term rankings with SEO and authority building. Maximize ROI from every Taka spent. Stay involved until your business reaches success.', icon: '🚀' },
+];
 
-const process = [
-  { step: '01', title: 'Research', description: 'I audit your current setup, analyze competitors, and study your audience. No assumptions — only data.', icon: '🔎' },
-  { step: '02', title: 'Strategy', description: 'A custom plan built around your business goals. No templates, no copy-paste frameworks.', icon: '🗺️' },
-  { step: '03', title: 'Execution', description: 'I implement the strategy personally — or manage my team to deliver. Every task ties to a measurable outcome.', icon: '⚙️' },
-  { step: '04', title: 'Monitor', description: 'Track rankings, traffic, and conversions weekly. Fix what is not working. Double down on what is.', icon: '📈' },
-  { step: '05', title: 'Review', description: 'Every two months, we review performance and adjust the strategy. The market changes — the plan should too.', icon: '🔄' },
-  { step: '06', title: 'Scale', description: 'What works gets expanded. What does not gets cut. The focus is always on ROI, not activity.', icon: '🚀' },
+const pricingPlans = [
+  {
+    name: 'Standard',
+    description: 'Perfect for small businesses',
+    price: '25K',
+    period: 'Monthly',
+    features: ['SEO Service', 'Facebook Ads', 'Instagram Ads', 'GBP Management', 'Marketing Analytics & Reporting', 'Consultant Support'],
+    cta: 'Buy Now',
+    popular: false,
+  },
+  {
+    name: 'Professional',
+    description: 'Great for Growing Businesses',
+    price: '35K',
+    period: 'Monthly',
+    features: ['SEO Service', 'YouTube SEO', 'Facebook Ads', 'Instagram Ads', 'Google Ads', 'GBP Management', 'Marketing Analytics & Reporting'],
+    cta: 'Buy Now',
+    popular: true,
+  },
+  {
+    name: 'Premium',
+    description: 'For Established Businesses',
+    price: '55K',
+    period: 'Monthly',
+    features: ['Everything in Professional', 'YouTube Ads', 'Social Media Management', 'Branding Services', 'Website Maintenance', 'YouTube Video Creation (6)', 'YouTube Shorts Creation (6)'],
+    cta: 'Buy Now',
+    popular: false,
+  },
+];
+
+const faqs = [
+  { question: 'ডিজিটাল মার্কেটিং এক্সপার্ট কি এবং কেন দরকার?', answer: 'ডিজিটাল মার্কেটিং এক্সপার্ট হলেন সেই ব্যক্তি যিনি SEO, PPC, সোশ্যাল মিডিয়া এবং কন্টেন্ট স্ট্র্যাটেজি একসাথে ম্যানেজ করে আপনার বিজনেসের জন্য measurable growth আনেন।' },
+  { question: 'SEO Expert vs Digital Marketing Expert — পার্থক্য কি?', answer: 'SEO Expert শুধু Google ranking-এ কাজ করে, কিন্তু Digital Marketing Expert SEO, Ads, Social Media, Content সবই ম্যানেজ করে সম্পূর্ণ growth strategy দেয়।' },
+  { question: 'GEO (Generative Engine Optimization) কি?', answer: 'GEO হলো AI search engines (ChatGPT, Perplexity) এ আপনার businessকে cite করানোর পদ্ধতি। এটা নতুন generation এর SEO।' },
+  { question: 'কেন আমি Kanok Miah-কে বাছাই করব?', answer: '6+ years experience, 350+ projects, 210+ SEO campaigns। Real results দেখানোর প্রমাণ আছে। Affordable pricing এবং transparent reporting।' },
+];
+
+const caseStudies = [
+  { client: 'Locksmith Dundee', market: 'UK / Local SEO', type: '+320% Organic Traffic', slug: 'locksmith-dundee' },
+  { client: 'SMMSun', market: 'Global / SaaS SEO', type: '+520% Organic Traffic', slug: 'smmsun' },
+  { client: 'Stealth Windshield', market: 'US / E-commerce', type: '+285% Organic Sales', slug: 'stealth-windshield' },
+];
+
+const reviews = [
+  { name: 'Pariya Sultana', text: 'Working with Kanok was the best decision for my online business. He improved my Google ranking fast and explained everything clearly. Will work again for sure.', time: '12 months ago' },
+  { name: 'Orin Afrin', text: 'Kanok Miah is a true professional when it comes to SEO. He helped my local business appear on the first page of Google. Always available to answer questions.', time: '12 months ago' },
+  { name: 'Sk totol Khan', text: 'I tried many SEO experts before, but Kanok stood out. He\'s professional, friendly, and delivers real results. My traffic has grown a lot.', time: '12 months ago' },
+  { name: 'MD Sahid Alam', text: 'Kanok is not just an SEO specialist, he\'s a growth partner. He helped my small business grow online in just a few months.', time: '12 months ago' },
 ];
 
 export default function HomePage() {
@@ -34,7 +80,6 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[var(--color-forest)] via-[var(--color-forest)] to-[#1a4d3a]">
-        {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 h-72 w-72 rounded-full bg-white blur-3xl"></div>
           <div className="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-[var(--color-signal)] blur-3xl"></div>
@@ -52,23 +97,20 @@ export default function HomePage() {
               </div>
               
               <h1 className="mt-6 font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
-                Digital Growth &{' '}
-                <span className="text-[var(--color-signal)]">AI SEO</span>{' '}
-                Consultant
+                Best Digital Marketing<br/>
+                <span className="text-[var(--color-signal)]">Expert in Bangladesh</span>
               </h1>
               
               <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                I help businesses rank higher on Google and get cited by AI search engines. 
-                Data-driven SEO, Facebook Ads, Google Ads, and digital marketing strategies 
-                that deliver <span className="font-semibold text-white">measurable results</span>.
+                Looking for the best digital marketing expert in Bangladesh to accelerate your business growth? I'm Kanok Miah, a trusted SEO consultant and digital marketing strategist with <strong>6+ years of hands-on experience</strong>, delivering <strong>210+ successful SEO projects</strong> and <strong>350+ digital marketing campaigns</strong>.
               </p>
               
               <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-2 rounded-xl bg-[var(--color-signal)] px-8 py-4 text-base font-semibold text-white shadow-lg shadow-[var(--color-signal)]/30 transition-all hover:gap-4 hover:shadow-xl hover:shadow-[var(--color-signal)]/40"
+                  className="group inline-flex items-center gap-2 rounded-xl bg-[var(--color-signal)] px-8 py-4 text-base font-semibold text-white shadow-lg shadow-[var(--color-signal)]/30 transition-all hover:gap-4 hover:shadow-xl"
                 >
-                  Book a free 30-min call
+                  Request for Quote
                   <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -77,23 +119,27 @@ export default function HomePage() {
                   href="/case-studies"
                   className="inline-flex items-center gap-2 rounded-xl border-2 border-white/30 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20"
                 >
-                  View case studies
+                  View Case Studies
                 </Link>
               </div>
               
-              {/* Metrics */}
-              <div className="mt-12 grid grid-cols-3 gap-4">
-                <div className="text-center lg:text-left">
+              {/* Quick Stats */}
+              <div className="mt-10 flex flex-wrap justify-center gap-6 lg:justify-start">
+                <div className="text-center">
                   <div className="text-3xl font-bold text-white">6+</div>
                   <div className="text-sm text-white/60">Years Experience</div>
                 </div>
-                <div className="text-center lg:text-left">
+                <div className="text-center">
                   <div className="text-3xl font-bold text-[var(--color-signal)]">210+</div>
                   <div className="text-sm text-white/60">SEO Projects</div>
                 </div>
-                <div className="text-center lg:text-left">
+                <div className="text-center">
                   <div className="text-3xl font-bold text-white">350+</div>
                   <div className="text-sm text-white/60">Total Projects</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-white">105</div>
+                  <div className="text-sm text-white/60">Google Reviews</div>
                 </div>
               </div>
             </div>
@@ -116,19 +162,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Quick Answer — AEO optimized */}
-      <section className="bg-white py-12">
+      {/* About Section */}
+      <section className="bg-white py-16">
         <div className="mx-auto max-w-5xl px-4 lg:px-8">
-          <div className="relative overflow-hidden rounded-2xl border border-[var(--color-signal)]/20 bg-gradient-to-r from-[var(--color-signal)]/5 to-transparent p-8">
-            <div className="absolute top-0 right-0 h-32 w-32 bg-[var(--color-signal)]/10 rounded-full blur-3xl"></div>
-            <div className="relative">
-              <div className="inline-flex items-center gap-2 rounded-full bg-[var(--color-signal)]/10 px-4 py-1 text-sm font-medium text-[var(--color-signal-dk)]">
-                💡 Quick Answer
-              </div>
-              <p className="mt-4 text-lg leading-relaxed text-[var(--color-graphite)]">
-                <strong className="text-[var(--color-forest)]">Kanok Miah</strong> is a digital marketing consultant in Dhaka, Bangladesh with 6+ years of experience. He has completed <strong>210+ SEO projects</strong> and <strong>350+ digital marketing campaigns</strong> for businesses in Bangladesh, UK, USA, UAE, and Canada. His services include SEO, AI SEO, Local SEO, Facebook Ads, Google Ads, and social media marketing.
-              </p>
-            </div>
+          <div className="text-center mb-12">
+            <Badge variant="signal">ABOUT</Badge>
+            <h2 className="mt-4 font-display text-3xl font-bold text-[var(--color-forest)]">
+              Kanok Miah – SEO Expert in Bangladesh
+            </h2>
+          </div>
+          
+          <div className="prose prose-lg max-w-none">
+            <p className="text-lg text-[var(--color-graphite)] leading-relaxed">
+              Hi, I'm Kanok Miah — a digital marketing expert and SEO expert in Bangladesh working in this field since 2019. I've led <strong>350+ projects</strong> and <strong>210+ SEO campaigns</strong> across local businesses, e-commerce stores, and international brands.
+            </p>
+            <p className="mt-4 text-lg text-[var(--color-graphite)] leading-relaxed">
+              I founded Kanokmiah.com and currently serve as <strong>SEO Project Manager at Khan IT</strong> and <strong>Head of Digital Marketing at CloudMatrix Tech</strong>. Previously I worked at Walton Plaza and Solus Corporation.
+            </p>
+            <p className="mt-4 text-lg text-[var(--color-graphite)] leading-relaxed">
+              I've earned certifications from Google Digital Garage, HubSpot Academy, SEMrush Academy, LinkedIn Learning, Coursera, Skillshare, YouTube and various industry blogs, but those certifications alone only took me so far in real-world experience. <strong>The real learning came from doing.</strong>
+            </p>
+            <p className="mt-4 text-lg text-[var(--color-graphite)] leading-relaxed">
+              Every month I actively manage 8–12 live SEO projects and 2–5 paid ad campaigns — running experiments on real websites, testing what actually moves rankings versus what just sounds good in theory. Every algorithm update, every ranking drop, every unexpected win taught me something no course ever could.
+            </p>
           </div>
         </div>
       </section>
@@ -137,12 +193,12 @@ export default function HomePage() {
       <section className="bg-[var(--color-paper)] py-20">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="text-center">
-            <Badge variant="signal">SCOPE</Badge>
+            <Badge variant="signal">SERVICES</Badge>
             <h2 className="mt-4 font-display text-4xl font-bold text-[var(--color-forest)]">
-              What I Do
+              What Services I Offer
             </h2>
             <p className="mt-4 text-lg text-[var(--color-graphite)] max-w-2xl mx-auto">
-              Comprehensive digital marketing services designed to grow your business online
+              As a professional digital marketing consultant, I offer 360° marketing service in Bangladesh
             </p>
           </div>
           
@@ -155,12 +211,6 @@ export default function HomePage() {
                     {service.title}
                   </h3>
                   <p className="mt-2 text-sm text-[var(--color-graphite)]">{service.description}</p>
-                  <div className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[var(--color-signal-dk)] opacity-0 group-hover:opacity-100 transition-opacity">
-                    Learn more
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
                 </Card>
               </Link>
             ))}
@@ -172,17 +222,17 @@ export default function HomePage() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="text-center">
-            <Badge variant="forest">METHOD</Badge>
+            <Badge variant="forest">PROCESS</Badge>
             <h2 className="mt-4 font-display text-4xl font-bold text-[var(--color-forest)]">
-              How The Work Runs
+              My Digital Marketing Services Process
             </h2>
             <p className="mt-4 text-lg text-[var(--color-graphite)] max-w-2xl mx-auto">
-              A proven 6-step process that delivers results, not excuses
+              I don't just "do marketing"—I build strategies that deliver long-term growth and ROI
             </p>
           </div>
           
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {process.map((p, index) => (
+            {processSteps.map((p) => (
               <div 
                 key={p.step} 
                 className="group relative overflow-hidden rounded-2xl border border-[var(--color-forest)]/10 bg-white p-6 shadow-sm transition-all hover:shadow-lg hover:border-[var(--color-signal)]/30"
@@ -193,7 +243,7 @@ export default function HomePage() {
                     {p.icon}
                   </span>
                   <span className="mt-4 block font-data text-sm font-bold text-[var(--color-signal-dk)]">
-                    Step {p.step}
+                    STEP-{p.step}
                   </span>
                   <h3 className="mt-2 font-display text-xl font-semibold text-[var(--color-forest)]">
                     {p.title}
@@ -208,21 +258,82 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Case Studies */}
-      <section className="bg-gradient-to-b from-[var(--color-paper)] to-white py-20">
+      {/* Pricing */}
+      <section className="bg-[var(--color-paper)] py-20">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="text-center">
-            <Badge variant="signal">PROOF</Badge>
+            <Badge variant="signal">PRICING</Badge>
             <h2 className="mt-4 font-display text-4xl font-bold text-[var(--color-forest)]">
-              Selected Results
+              Transparent Pricing Plans
             </h2>
             <p className="mt-4 text-lg text-[var(--color-graphite)] max-w-2xl mx-auto">
-              Real projects with real metrics from real clients
+              Choose the perfect package for your business needs. All packages include dedicated support and transparent reporting.
             </p>
           </div>
           
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {featuredCaseStudies.map((cs) => (
+            {pricingPlans.map((plan) => (
+              <div 
+                key={plan.name}
+                className={`relative rounded-2xl p-6 ${
+                  plan.popular 
+                    ? 'bg-gradient-to-br from-[var(--color-signal)] to-[#e85d04] text-white shadow-xl' 
+                    : 'bg-white border border-[var(--color-forest)]/10 shadow-sm'
+                }`}
+              >
+                {plan.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-white px-4 py-1 text-xs font-bold text-[var(--color-signal-dk)]">
+                    Popular
+                  </div>
+                )}
+                <h3 className={`font-display text-xl font-bold ${plan.popular ? 'text-white' : 'text-[var(--color-forest)]'}`}>
+                  {plan.name}
+                </h3>
+                <p className={`mt-1 text-sm ${plan.popular ? 'text-white/80' : 'text-[var(--color-graphite)]'}`}>
+                  {plan.description}
+                </p>
+                <div className="mt-4">
+                  <span className="font-display text-4xl font-bold">{plan.price}</span>
+                  <span className={`text-sm ${plan.popular ? 'text-white/80' : 'text-[var(--color-graphite)]'}`}> BDT/{plan.period}</span>
+                </div>
+                <ul className="mt-6 space-y-2">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-2 text-sm">
+                      <svg className={`h-4 w-4 ${plan.popular ? 'text-white' : 'text-[var(--color-signal-dk)]'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className={plan.popular ? 'text-white/90' : 'text-[var(--color-graphite)]'}>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/contact"
+                  className={`mt-6 block w-full rounded-xl px-4 py-3 text-center font-medium transition-all ${
+                    plan.popular 
+                      ? 'bg-white text-[var(--color-signal-dk)] hover:bg-white/90' 
+                      : 'bg-[var(--color-signal)] text-white hover:bg-[var(--color-signal-dk)]'
+                  }`}
+                >
+                  {plan.cta}
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="text-center">
+            <Badge variant="signal">CASE STUDIES</Badge>
+            <h2 className="mt-4 font-display text-4xl font-bold text-[var(--color-forest)]">
+              Digital Marketing Case Studies
+            </h2>
+          </div>
+          
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {caseStudies.map((cs) => (
               <Link key={cs.slug} href={`/case-studies/${cs.slug}`}>
                 <Card hover className="h-full group relative overflow-hidden">
                   <div className="absolute top-0 right-0 h-24 w-24 bg-gradient-to-br from-[var(--color-signal)]/20 to-transparent rounded-full blur-2xl transition-all group-hover:scale-150"></div>
@@ -232,13 +343,8 @@ export default function HomePage() {
                       {cs.client}
                     </h3>
                     <p className="mt-1 text-sm text-[var(--color-graphite)]">{cs.type}</p>
-                    <div className="mt-6 flex items-baseline gap-2">
-                      <span className="font-data text-3xl font-bold text-[var(--color-signal-dk)]">
-                        {Object.values(cs.metrics)[0]}
-                      </span>
-                      <span className="text-sm text-[var(--color-graphite)]">
-                        {Object.keys(cs.metrics)[0]}
-                      </span>
+                    <div className="mt-4 text-[var(--color-signal-dk)] text-sm font-medium">
+                      Read Full Case Study →
                     </div>
                   </div>
                 </Card>
@@ -260,37 +366,98 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="relative overflow-hidden bg-[var(--color-forest)] py-20">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 h-96 w-96 rounded-full bg-white blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 h-72 w-72 rounded-full bg-[var(--color-signal)] blur-3xl"></div>
-        </div>
-        
-        <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
+      {/* Reviews */}
+      <section className="bg-[var(--color-forest)] py-20">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="text-center">
-            <Badge variant="forest">TESTIMONIALS</Badge>
+            <Badge variant="forest">REVIEWS</Badge>
             <h2 className="mt-4 font-display text-4xl font-bold text-white">
-              What Clients Say
+              Trusted by Clients — Proven by Results
             </h2>
           </div>
           
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {TESTIMONIALS.map((testimonial, index) => (
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {reviews.map((review, index) => (
               <div 
                 key={index} 
                 className="relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-sm p-6"
               >
                 <div className="absolute top-4 right-4 text-6xl text-white/10 font-serif">"</div>
                 <p className="relative text-white/90 leading-relaxed">
-                  {testimonial.text}
+                  "{review.text}"
                 </p>
                 <div className="mt-6 flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-signal)] text-white font-bold">
-                    {testimonial.author.charAt(0)}
+                    {review.name.charAt(0)}
                   </div>
-                  <div className="font-medium text-white">{testimonial.author}</div>
+                  <div>
+                    <div className="font-medium text-white">{review.name}</div>
+                    <div className="text-sm text-white/60">{review.time}</div>
+                  </div>
                 </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center">
+            <a 
+              href="https://g.page/r/kanokmiah/review" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-medium text-[var(--color-forest)] hover:bg-white/90 transition-all"
+            >
+              Write a Review on Google
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Work With Me */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="text-center">
+            <Badge variant="signal">WHY ME</Badge>
+            <h2 className="mt-4 font-display text-4xl font-bold text-[var(--color-forest)]">
+              Why Work With Me?
+            </h2>
+          </div>
+          
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: '6+ Years of Hands-On Experience', desc: 'Since 2019, I have been engaged with businesses belonging to several industries. This exposure brings me to an understanding of problems unique to you.' },
+              { title: 'Proven Results', desc: 'Having completed 350+ digital marketing projects and 210 SEO campaigns, I prove my worth with results: more traffic, more leads, more sales.' },
+              { title: 'Problem-Solving Approach', desc: 'Many clients come to me after unsuccessfully trying campaigns. I work to discover the underlying problems and devise campaigns that work.' },
+              { title: 'ROI-Focused Campaigns', desc: 'In every campaign I develop, I have one ultimate goal: results. Whether it\'s SEO, paid ads, or content, I focus on delivering growth you can measure.' },
+              { title: 'Solid Marketing Background', desc: 'With a BBA in Marketing, I understand what happens in the real world. I build data-driven strategies from real-life observations.' },
+              { title: 'Affordable & Transparent', desc: 'I stand for fairness in pricing, straightforward communication, and total honesty. No hidden costs, no fake promises—only real results.' },
+            ].map((item, index) => (
+              <div key={index} className="rounded-xl border border-[var(--color-forest)]/10 bg-[var(--color-paper)] p-6">
+                <h3 className="font-display text-lg font-semibold text-[var(--color-forest)]">{item.title}</h3>
+                <p className="mt-2 text-sm text-[var(--color-graphite)] leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="bg-[var(--color-paper)] py-20">
+        <div className="mx-auto max-w-4xl px-4 lg:px-8">
+          <div className="text-center">
+            <Badge variant="signal">FAQs</Badge>
+            <h2 className="mt-4 font-display text-4xl font-bold text-[var(--color-forest)]">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          
+          <div className="mt-12 space-y-4">
+            {faqs.map((faq, index) => (
+              <div key={index} className="rounded-xl bg-white p-6 shadow-sm">
+                <h3 className="font-display text-lg font-semibold text-[var(--color-forest)]">{faq.question}</h3>
+                <p className="mt-2 text-[var(--color-graphite)] leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -309,24 +476,23 @@ export default function HomePage() {
             Ready to Grow Your Business?
           </h2>
           <p className="mt-6 text-xl text-white/90 max-w-2xl mx-auto">
-            Book a free 30-minute strategy call. Get an audit and 3 actionable steps — 
-            no cost, no commitment.
+            If you are done throwing away your money on stupid strategies and if you want to work with the best digital marketer in Bangladesh, I will be right there for you!
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
               href="/contact"
               className="group inline-flex items-center gap-3 rounded-xl bg-white px-8 py-4 text-lg font-semibold text-[var(--color-signal-dk)] shadow-lg transition-all hover:scale-105 hover:shadow-xl"
             >
-              Book a free call
+              01712-883101
               <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
             <Link
-              href="/services"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-xl border-2 border-white/50 bg-transparent px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-white/10"
             >
-              View all services
+              Request for Quote
             </Link>
           </div>
         </div>
